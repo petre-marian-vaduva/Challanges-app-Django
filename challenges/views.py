@@ -9,7 +9,7 @@ dict_months = {'january': 'Eat not meat for the entire month!',
 def monthly_challenges_by_number(request, month):
     months_numbers = list(dict_months.keys())
     forward_month = months_numbers[month-1]
-    return HttpResponse(forward_month)
+    return HttpResponseRedirect('/challenges/' + forward_month)
 
 
 
