@@ -18,7 +18,8 @@ def monthly_challenges_by_number(request, month):
 def monthly_challenges(request, month):
     try:
         my_guess = dict_months[month]
-        return HttpResponse(my_guess)
+        response_data = f'<h1>{my_guess}</h1>'
+        return HttpResponse(response_data)
     except:
         return HttpResponse('Invalid input')
 
