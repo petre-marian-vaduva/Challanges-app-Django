@@ -39,7 +39,7 @@ def monthly_challenges(request, month):
         dict_challenge = dict_months[month]
         return render(request, 'challenges/challenge.html', {
             'month_value': dict_challenge,
-            'month_key': month.capitalize()
+            'month_key': month
         })
     except:
         return HttpResponse('Invalid input')
