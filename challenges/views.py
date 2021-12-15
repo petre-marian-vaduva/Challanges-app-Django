@@ -36,7 +36,13 @@ def monthly_challenges_by_number(request, month):
 
 def monthly_challenges(request, month):
     try:
-        return render(request, 'challenges/challenge.html')
+        dict_challenge = dict_months[month]
+        return render(request, 'challenges/challenge.html', {
+            'month_value': dict_challenge,
+            'month_key': month.capitalize()
+        })
     except:
         return HttpResponse('Invalid input')
+
+
 
