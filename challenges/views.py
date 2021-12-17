@@ -16,14 +16,10 @@ dict_months = {'january': 'Eat not meat for the entire month!',
                'december': 'Eat not meat for the entire month!'}
 
 def index(request):
-    str_result = ''
     dict_keys = list(dict_months.keys())
-    for key in dict_keys:
-        path_dict = reverse('monthly-challenge', args=[key])
-        str_result += f'<li><a href="{path_dict}">{key.capitalize()}</a></li>'
-    return HttpResponse(f'<ol>{str_result}</ol>')
-
-
+    return render(request, 'challenges/index.html', {
+        'dict_keys': dict_keys
+    })
 
 
 
