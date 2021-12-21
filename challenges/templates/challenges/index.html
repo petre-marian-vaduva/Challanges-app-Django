@@ -3,6 +3,7 @@
 {% block my_title %} Title_name {% endblock %}
 
 {% block content %}
+{% include 'challenges/includes/header.html' %}
 <ul>
     {% for key in dict_keys %}
     <li><a href='{%url "monthly-challenge" key%}'>{{ key }}</a></li>
