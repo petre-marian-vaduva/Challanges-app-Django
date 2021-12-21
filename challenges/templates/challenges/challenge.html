@@ -1,14 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ month_key | title}} challenge</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block my_title %}
+    {{ month_key | title}} challenge
+{% endblock %}
+
+{% block content %}
     <h1>{{ month_key | title}} challenge</h1>
-    <h2>{{ month_value }}</h2>
-</body>
-</html>
+    {% if month_value is not None %}
+        <h2>{{ month_value }}</h2>
+    {% else %}
+        <p>There is no challenge for {{ month_key }} yet!</p>
+    {% endif %}
+{% endblock %}

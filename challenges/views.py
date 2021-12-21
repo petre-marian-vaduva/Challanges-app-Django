@@ -13,7 +13,7 @@ dict_months = {'january': 'Eat not meat for the entire month!',
                'september': 'Walk for at least 20 min every day!',
                'october': 'Learn Django for 20 min',
                'november': 'Walk for at least 20 min every day!',
-               'december': 'Eat not meat for the entire month!'}
+               'december': None}
 
 def index(request):
     dict_keys = list(dict_months.keys())
