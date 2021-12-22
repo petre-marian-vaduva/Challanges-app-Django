@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
 # Create your views here.
 
@@ -38,7 +38,7 @@ def monthly_challenges(request, month):
             'month_key': month
         })
     except:
-        return HttpResponse('Invalid input')
+        raise Http404()
 
 
 
