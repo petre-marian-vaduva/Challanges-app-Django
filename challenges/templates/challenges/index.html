@@ -4,17 +4,19 @@
 {% block css_file %}
     <link rel="stylesheet" href="{% static 'challenges/challenges.css' %}">
     <link rel="stylesheet" href="{% static 'challenges.css' %}">
+    <link rel="stylesheet" href="{% static 'challenges/includes/header.css' %}">
 {% endblock %}
 
 
 
 {% block my_title %} Challenges list {% endblock %}
 
+
 {% block content %}
 {% include 'challenges/includes/header.html' %}
-<ol>
+<ul>
     {% for key in dict_keys %}
     <li><a href='{%url "monthly-challenge" key%}'>{{ key }}</a></li>
     {% endfor %}
-</ol>
+</ul>
 {% endblock %}
